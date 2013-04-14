@@ -1,5 +1,4 @@
 package pl.kopciu.organism;
-//Wojciech Kopeæ, I4, 101675
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
@@ -15,7 +14,7 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 
-/**G³ówna klasa do zarz¹dzania ca³ym organizmem */
+/**Gï¿½ï¿½wna klasa do zarzï¿½dzania caï¿½ym organizmem */
 public class Organism implements Serializable{
 	
 	/**
@@ -99,14 +98,14 @@ public class Organism implements Serializable{
 	}
 	/**
 	 * 
-	 * @return uk³ad odpornoœciowy organizmu
+	 * @return ukï¿½ad odpornoï¿½ciowy organizmu
 	 */
 	public TransportSystem getImmunologicalSystem() {
 		return immunologicalSystem;
 	}
 	/**
 	 * 
-	 * @return uk³ad krwionoœny organizmu
+	 * @return ukï¿½ad krwionoï¿½ny organizmu
 	 */
 	public TransportSystem getCirculatorySystem() {
 		return circulatorySystem;
@@ -189,7 +188,7 @@ public class Organism implements Serializable{
 					g2d.drawString("Target: "+((Leukocyte)popupSubject).getTarget(), x+5, y+30);
 				else{
 					g2d.drawString("Target: "+((Virus)popupSubject).getTarget(), x+5, y+30);
-					g2d.drawString("¯ycia: "+((Virus)popupSubject).getLives(), x+5, y+40);
+					g2d.drawString("ï¿½ycia: "+((Virus)popupSubject).getLives(), x+5, y+40);
 				}
 			}
 		}
@@ -254,7 +253,7 @@ public class Organism implements Serializable{
 		e.setDead(true);
 	}
 	/**
-	 * Zwraca referencjê do szpiku
+	 * Zwraca referencjï¿½ do szpiku
 	 * @return
 	 */
 	public Organ getMarrow(){
@@ -269,7 +268,7 @@ public class Organism implements Serializable{
 		return organs[marrowNr];
 	}
 	/**
-	 * Sprawdza, czy w zasiêgu jest jakiœ wirus
+	 * Sprawdza, czy w zasiï¿½gu jest jakiï¿½ wirus
 	 * @param position pozycja sprawdzanego obiektu
 	 * @return
 	 */
@@ -304,7 +303,7 @@ public class Organism implements Serializable{
 		}
 	}
 	/**
-	 * Znajduje cel dla pozbawionego celu Leukocytu, preferowany jest cel, któy jest celem dla najmniejszej liczby leukocytów
+	 * Znajduje cel dla pozbawionego celu Leukocytu, preferowany jest cel, ktï¿½y jest celem dla najmniejszej liczby leukocytï¿½w
 	 * @return cel
 	 */
 	public synchronized Virus getNextTarget(){
@@ -324,7 +323,7 @@ public class Organism implements Serializable{
 		}
 	}
 	/**
-	 * Obs³uguje klikniêcie o danych parametrach
+	 * Obsï¿½uguje klikniï¿½cie o danych parametrach
 	 * @param x
 	 * @param y
 	 */
@@ -341,20 +340,20 @@ public class Organism implements Serializable{
 	}
 	/**
 	 * Zapisuje wynik gry
-	 * @param name nazwa u¿ytkownika
+	 * @param name nazwa uï¿½ytkownika
 	 */
 	public void saveResult(String name){
 		Result.addResult(name, killedPatogens, (Calendar.getInstance().getTimeInMillis()-startTime.getTimeInMillis())/1000);
 	}
 	/**
-	 * Zwraca obiekt, którego skrócone informacje s¹ obecnie wyœwietlane
+	 * Zwraca obiekt, ktï¿½rego skrï¿½cone informacje sï¿½ obecnie wyï¿½wietlane
 	 * @return
 	 */
 	public Thing getPopupSubject() {
 		return popupSubject;
 	}
 	/**
-	 * ustawia obiekt, którego skrócone dane maj¹ byæ wyœwietlane
+	 * ustawia obiekt, ktï¿½rego skrï¿½cone dane majï¿½ byï¿½ wyï¿½wietlane
 	 * @param popupSubject
 	 */
 	public void setPopupSubject(Thing popupSubject) {
@@ -390,7 +389,7 @@ public class Organism implements Serializable{
 		return killedPatogens;
 	}
 	/**
-	 * zmniejsza iloœæ ¿ywych organów
+	 * zmniejsza iloï¿½ï¿½ ï¿½ywych organï¿½w
 	 */
 	public synchronized void decOrgansAlive(){
 		organsAlive--;
@@ -399,20 +398,20 @@ public class Organism implements Serializable{
 	}
 	/**
 	 * 
-	 * @return wielkoœæ boku wêz³a (nie organu)
+	 * @return wielkoï¿½ï¿½ boku wï¿½zï¿½a (nie organu)
 	 */
 	public int getNodeSize(){
 		return nodeSize;
 	}
 	/**
 	 * 
-	 * @return liczbê ¿ywych organów
+	 * @return liczbï¿½ ï¿½ywych organï¿½w
 	 */
 	public int getOrgansAlive() {
 		return organsAlive;
 	}
 	/**
-	 * Restartuje w¹tki po wczytaniu stanu gry
+	 * Restartuje wï¿½tki po wczytaniu stanu gry
 	 */
 	public synchronized void restart(){
 		for(Erythrocyte e: erythrocytes)
@@ -424,7 +423,7 @@ public class Organism implements Serializable{
 		new Thread(rm).start();
 	}
 	/**
-	 * startuje organizm na okreœlonym levelu
+	 * startuje organizm na okreï¿½lonym levelu
 	 * @param level
 	 */
 	public void start(int level){
@@ -433,14 +432,14 @@ public class Organism implements Serializable{
 		startTime=Calendar.getInstance();
 	}
 	/**
-	 * zwraca poziom trudnoœci
+	 * zwraca poziom trudnoï¿½ci
 	 * @return
 	 */
 	public int getLevel(){
 		return level;
 	}
 	/**
-	 * Nie korzystaæ, wy³acznie do zapisu/odczytu
+	 * Nie korzystaï¿½, wyï¿½acznie do zapisu/odczytu
 	 * @param downTime
 	 */
 	public void adjustTime(Calendar downTime){
